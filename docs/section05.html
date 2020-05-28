@@ -13,7 +13,7 @@ title: Section 5
 {% endfor %}
 
 {% if this_section %}
-<h1>{{ this_section.id }} {{ this_section.name }}</h1>
+<h1 id="sec{{ this_section.id}}">{{ this_section.id }} {{ this_section.name }}</h1>
 {% else %}
 No data?
 {% endif %}
