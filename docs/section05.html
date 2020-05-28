@@ -6,7 +6,8 @@ title: Section 5
 {% for section in site.data.rfc2324.sections %}
   {% if section.id == sectionid %}
     {% assign this_section = section %}
-  {% elsif not this_section %}
+  {% elsif this_section %}
+  {% else %}
     {% assign this_section = section %}
   {% endif %}
 {% endfor %}
