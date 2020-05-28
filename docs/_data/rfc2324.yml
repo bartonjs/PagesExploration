@@ -45,8 +45,7 @@ sections:
           - type: SHOULD
             text: Every home computer network SHOULD be protected by a firewall from sources of heat.
             notes:
-              - Most home network system administrators drink coffee, and are willing to accommodate the needs of tunnelling
-   HTCPCP.
+              - Most home network system administrators drink coffee, and are willing to accommodate the needs of tunnelling HTCPCP.
   - id: 6
     name: System management considerations
   - id: 7
