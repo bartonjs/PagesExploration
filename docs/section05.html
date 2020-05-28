@@ -1,0 +1,15 @@
+---
+layout: default
+title: Section 5
+---
+{% for section in site.data.sections %}
+  {% if section.id == "5" %}
+    {% assign this_section = section %}
+  {% endif %}
+{% endfor %}
+
+{% if this_section %}
+<h1>{{ this_section.id }} {{ this_section.name }}</h1>
+{% else %}
+No data?
+{% endif %}
