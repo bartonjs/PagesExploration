@@ -31,3 +31,42 @@ sections:
       -
         id: 2.2
         name: Coffee Pot Header fields
+  -
+    id: 3
+    name: The "coffee" URI scheme
+    rules:
+      -
+        type: MAY
+        text: However, the use of coffee-scheme in various languages MAY be interpreted as an indication of the kind of coffee produced by the coffee pot.
+        notes:
+          - Note that while URL scheme names are case-independent, capitalization is important for German and thus the initial "K" must be encoded.
+  -
+    id: 4
+    name: The "message/coffeepot" media type
+  -
+    id: 5
+    name: Operational constraints
+    sections:
+      -
+        id: 5.1
+        name: Timing Considerations
+        rules:
+          -
+            type: SHOULD
+            text: Coffee pots SHOULD use the Network Time Protocol [NTP] to synchronize their clocks to a globally accurate time standard.
+      -
+        id: 5.2
+        name: Crossing firewalls
+        rules:
+          - 
+            type: SHOULD
+            text: Every home computer network SHOULD be protected by a firewall from sources of heat.
+            notes:
+              - Most home network system administrators drink coffee, and are willing to accommodate the needs of tunnelling
+   HTCPCP.
+  -
+    id: 6
+    name: System management considerations
+  -
+    id: 7
+    name: Security Considerations
