@@ -2,8 +2,11 @@
 layout: default
 title: Section 5
 ---
+{% assign sectionid = 5 %}
 {% for section in site.data.rfc2324.sections %}
-  {% if section.id == "5" %}
+  {% if section.id == sectionid %}
+    {% assign this_section = section %}
+  {% elsif not this_section %}
     {% assign this_section = section %}
   {% endif %}
 {% endfor %}
