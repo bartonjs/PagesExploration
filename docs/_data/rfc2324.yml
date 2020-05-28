@@ -1,72 +1,53 @@
 sections:
-  -
-    id: 1
+  - id: 1
     name: Rationale and Scope
-  -
-    id: 2
+  - id: 2
     name: HTCPCP Protocol
     sections:
-      -
-        id: 2.1
+      - id: 2.1
         name: HTCPCP Added Methods
         sections:
-          -
-            id: 2.1.1
+          - id: 2.1.1
             name: The BREW method, and the use of POST
             rules:
-              -
-                type: MUST
+              - type: MUST
                 text: A coffee pot server MUST accept both the BREW and POST method equivalently. However, the use of POST for causing actions to happen is deprecated.
                 notes:
                   - POST may be a trademark for coffee, and so the BREW method has been added.
-          -
-            id: 2.1.2
+          - id: 2.1.2
             name: GET method
-          -
-            id: 2.1.3
+          - id: 2.1.3
             name: PROPFIND method
-          -
-            id: 2.1.4
+          - id: 2.1.4
             name: WHEN method
-      -
-        id: 2.2
+      - id: 2.2
         name: Coffee Pot Header fields
-  -
-    id: 3
+  - id: 3
     name: The "coffee" URI scheme
     rules:
-      -
-        type: MAY
+      - type: MAY
         text: However, the use of coffee-scheme in various languages MAY be interpreted as an indication of the kind of coffee produced by the coffee pot.
         notes:
           - Note that while URL scheme names are case-independent, capitalization is important for German and thus the initial "K" must be encoded.
-  -
-    id: 4
+  - id: 4
     name: The "message/coffeepot" media type
-  -
-    id: 5
+  - id: 5
     name: Operational constraints
     sections:
-      -
-        id: 5.1
+      - id: 5.1
         name: Timing Considerations
         rules:
-          -
-            type: SHOULD
+          - type: SHOULD
             text: Coffee pots SHOULD use the Network Time Protocol [NTP] to synchronize their clocks to a globally accurate time standard.
-      -
-        id: 5.2
+      - id: 5.2
         name: Crossing firewalls
         rules:
-          - 
-            type: SHOULD
+          - type: SHOULD
             text: Every home computer network SHOULD be protected by a firewall from sources of heat.
             notes:
               - Most home network system administrators drink coffee, and are willing to accommodate the needs of tunnelling
    HTCPCP.
-  -
-    id: 6
+  - id: 6
     name: System management considerations
-  -
-    id: 7
+  - id: 7
     name: Security Considerations
