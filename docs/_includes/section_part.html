@@ -34,3 +34,7 @@
   {% include section_part.html section=subsection headertype=headertype %}
   {% decrement headertype %}
 {% endfor %}
+
+{% else %}
+<pre>Error: missing section or header type</pre>
+{% endif %}
