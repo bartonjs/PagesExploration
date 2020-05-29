@@ -22,6 +22,36 @@ sections:
             name: WHEN method
       - id: 2.2
         name: Coffee Pot Header fields
+        sections:
+          - id: 2.2.1
+            name: Recommended header fields
+            sections:
+              - id: 2.2.1.1
+                name: The "safe" response header field.
+          - id: 2.2.2
+            name: New header fields
+            sections:
+              - id: 2.2.2.1
+                name: The Accept-Additions header field
+          - id: 2.2.3
+            name: Omitted Header Fields
+            notes:
+              - No options were given for decaffeinated coffee. What's the point?
+      - id: 2.3
+        name: HTCPCP return codes
+        sections:
+          - id: 2.3.1
+            name: 406 Not Acceptable
+            rules:
+              - type: MAY
+                text: In HTCPCP, this response code MAY be returned if the operator of the coffee pot cannot comply with the Accept-Addition request.
+              - type: SHOULD
+                text: Unless the request was a HEAD request, the response SHOULD include an entity containing a list of available coffee additions.
+          - id: 2.3.2
+            name: 418 I'm a teapot
+            rules:
+              - type: MAY
+                text: The resulting entity body MAY be short and stout.
   - id: 3
     name: The "coffee" URI scheme
     rules:
