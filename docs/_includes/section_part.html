@@ -1,4 +1,3 @@
-{% if page.section and page.headertype %}
 <h{{ headertype}} id="sec{{ page.section.id}}"><a href="#sec{{ page.section.id}}">{{ page.section.id }}</a> {{ page.section.name }}</h{{ headertype }}>
 {% for note in page.section.notes %}
   <p>Note: {{ note }}</p>
@@ -34,7 +33,3 @@
   {% include section_part.html section=subsection headertype=headertype %}
   {% decrement headertype %}
 {% endfor %}
-
-{% else %}
-<pre>Error: missing section or header type</pre>
-{% endif %}
