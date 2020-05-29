@@ -2,18 +2,4 @@
 layout: default
 title: Section 5
 ---
-{% assign sectionid = 5 %}
-{% for section in site.data.rfc2324.sections %}
-  {% if section.id == sectionid %}
-    {% include section_part.html section=section headertype=1 %}
-  {% elsif this_section %}
-  {% else %}
-    {% assign this_section = section %}
-  {% endif %}
-{% endfor %}
-
-{% if this_section %}
-<h1 id="sec{{ this_section.id}}">{{ this_section.id }} {{ this_section.name }}</h1>
-{% else %}
-No data?
-{% endif %}
+{% include section_part.html section=site.data.rfc2324.sections[4] headertype=1 %}
