@@ -2,4 +2,5 @@
 layout: default
 title: Section 5
 ---
-{% include section_part.html section=site.data.rfc2324.sections[4] headertype=1 %}
+{% assign section = site.data.rfc2324.sections[4] %}
+{% include section_part.html section=section headertype=1 %}
