@@ -11,12 +11,16 @@
         {% case rule.type %}
           {% when "MUST" %}
           &#x2714;
-          {% when "MAY" %}
+          {% when "SHOULD" %}
           &#x2713;
+          {% when "MAY" %}
+          &#x2736;
           {% when "MUST NOT" %}
           &#x2718;
-          {% when "MAY NOT" %}
+          {% when "SHOULD NOT" %}
           &#x261B;
+          {% when "MAY NOT" %}
+          &#x273A;
           {% else %}
           (Unknown rule type: {{ rule.type }})
         {% endcase %}
@@ -30,8 +34,7 @@
 {% endif %}       
 
 {% for subsection in include.section.sections %}
-  {% assign ht = include.headertype %}
-  {% increment ht %}
+  {% assign ht = include.headertype + 1 %}
   {% include section_part.html section=subsection headertype=ht %}
 {% endfor %}
 
