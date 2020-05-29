@@ -34,7 +34,7 @@
 {% endif %}       
 
 {% for subsection in include.section.sections %}
-  {% assign ht = include.headertype + 1 %}
+  {% assign ht = include.headertype | plus: 1 %}
   {% include section_part.html section=subsection headertype=ht %}
 {% endfor %}
 
