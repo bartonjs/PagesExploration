@@ -1,4 +1,4 @@
-<h{{ headertype}} id="sec{{ page.section.id}}"><a href="#sec{{ page.section.id}}">{{ page.section.id }}</a> {{ page.section.name }}</h{{ headertype }}>
+<h{{ page.headertype}} id="sec{{ page.section.id}}"><a href="#sec{{ page.section.id}}">{{ page.section.id }}</a> {{ page.section.name }}</h{{ page.headertype }}>
 {% for note in page.section.notes %}
   <p>Note: {{ note }}</p>
 {% endfor %}
@@ -29,7 +29,7 @@
 {% endif %}       
 
 {% for subsection in section.sections %}
-  {% increment headertype %}
-  {% include section_part.html section=subsection headertype=headertype %}
-  {% decrement headertype %}
+  {% assign ht = page.headertype %}
+  {% increment ht %}
+  {% include section_part.html section=subsection headertype=ht %}
 {% endfor %}
