@@ -1,0 +1,36 @@
+{% if page.section and page.%}
+<h{{ headertype}} id="sec{{ page.section.id}}"><a href="#sec{{ page.section.id}}">{{ page.section.id }}</a> {{ page.section.name }}</h{{ headertype }}>
+{% for note in page.section.notes %}
+  <p>Note: {{ note }}</p>
+{% endfor %}
+
+{% if page.section.rules %}
+  <ul>
+    {% for rule in page.section.rules %}
+      <li><span>
+        {% case rule.type %}
+          {% when "MUST" %}
+          &#x2714;
+          {% when "MAY" %}
+          &#x2713;
+          {% when "MUST NOT" %}
+          &#x2718;
+          {% when "MAY NOT" %}
+          &#x261B;
+          {% else %}
+          (Unknown rule type: {{ rule.type }})
+        {% endcase %}
+        {{ rule.text }}</span>
+        {% for note in rule.notes %}
+          <p>Note: {{ note }}</p>
+        {% endfor %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}       
+
+{% for subsection in section.sections %}
+  {% increment headertype %}
+  {% include section_part.html section=subsection headertype=headertype %}
+  {% decrement headertype %}
+{% endfor %}
