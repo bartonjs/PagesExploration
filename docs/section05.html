@@ -5,7 +5,7 @@ title: Section 5
 {% assign sectionid = 5 %}
 {% for section in site.data.rfc2324.sections %}
   {% if section.id == sectionid %}
-    {% assign this_section = section %}
+    {% include section_part.html section=section headertype=1 %}
   {% elsif this_section %}
   {% else %}
     {% assign this_section = section %}
