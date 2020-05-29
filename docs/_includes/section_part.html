@@ -1,12 +1,12 @@
-{% if page.section and page.headertype %}
-<h{{ page.headertype}} id="sec{{ page.section.id}}"><a href="#sec{{ page.section.id}}">{{ page.section.id }}</a> {{ page.section.name }}</h{{ page.headertype }}>
-{% for note in page.section.notes %}
+{% if include.section and include.headertype %}
+<h{{ include.headertype}} id="sec{{ include.section.id}}"><a href="#sec{{ include.section.id}}">{{ include.section.id }}</a> {{ include.section.name }}</h{{ include.headertype }}>
+{% for note in include.section.notes %}
   <p>Note: {{ note }}</p>
 {% endfor %}
 
-{% if page.section.rules %}
+{% if include.section.rules %}
   <ul>
-    {% for rule in page.section.rules %}
+    {% for rule in include.section.rules %}
       <li><span>
         {% case rule.type %}
           {% when "MUST" %}
@@ -29,8 +29,8 @@
   </ul>
 {% endif %}       
 
-{% for subsection in section.sections %}
-  {% assign ht = page.headertype %}
+{% for subsection in include.section.sections %}
+  {% assign ht = include.headertype %}
   {% increment ht %}
   {% include section_part.html section=subsection headertype=ht %}
 {% endfor %}
